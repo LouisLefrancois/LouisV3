@@ -123,7 +123,6 @@ body {
 }
 
 .dark-theme .first-section {
-  font-size: 5vw;
   color: var(--dark-theme);
 }
 
@@ -150,6 +149,11 @@ body {
   cursor: pointer;
   color: #f8f8f8;
   text-decoration: none;
+  transition: color 0.3s ease 0s;
+}
+
+.dark-theme .mail {
+  color: #0a0a0a;
 }
 
 .copy-notification {
