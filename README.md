@@ -27,7 +27,7 @@ https://github.com/LouisLefrancois/Burberry-Monogram-Collection
 
 ## 2 - Hermes-Monogram-Collection
 
-Ce projet est une page web d'une seule page dédiée à la présentation de la collaboration entre Hermès et le photographe Hiroshi Sugimoto. Comme pour le premier projet, il a été créé dans le cadre d'un exercice personnel visant à perfectionner mes compétences.
+Ce projet est une one-page dédiée à la présentation de la collaboration entre Hermès et le photographe Hiroshi Sugimoto. Comme pour le premier projet, il a été créé dans le cadre d'un exercice personnel visant à perfectionner mes compétences.
 
 L'objectif principal de ce projet était de concevoir et de mettre en œuvre une page web élégante et immersive qui met en valeur les œuvres distinctives de Sugimoto en collaboration avec la marque emblématique Hermès. La page présente des galeries d'images captivantes, des informations détaillées sur la collaboration et des éléments interactifs pour captiver les visiteurs.
 
