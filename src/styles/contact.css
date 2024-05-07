@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  --light-theme: #e5e5e5;
+  --dark-theme: #0d0d0d;
+  --white-color: #f8f8f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+  scrollbar-width: none
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--dark-theme);
+  transition: background-color 0.5s ease;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 45px 80px;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  max-width: 100%;
+}
+
+.navbar .logo a {
+  font-family: "Courier New";
+  font-size: 15px;
+  color: #8c8c8c;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  transition: color 0.3s;
+}
+
+.navbar .menu a {
+  font-family: "Courier New";
+  font-size: 15px;
+  color: #8c8c8c;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.navbar .menu a.active {
+  color: var(--white-color);
+}
+
+.dark-theme .navbar .menu a.active {
+  color: var(--dark-theme);
+}
+
+.navbar .menu a:hover {
+  color: var(--white-color);
+}
+
+.dark-theme .navbar .menu a:hover {
+  color: var(--dark-theme);
+}
+
+.buttondarkmode {
+  position: fixed;
+  right: 0vh;
+  bottom: 3vh;
+  margin: 0 80px;
+  pointer-events: auto;
+  border-radius: 30px;
+  width: 18px;
+  height: 18px;
+  border: none;
+  background-color: var(--light-theme);
+  transition: background-color 0.5s ease 0s, transform 0.3s ease;
+}
+
+.buttondarkmode:hover {
+  transform: scale(1.15);
+}
+
+.dark-theme .buttondarkmode {
+  background-color: var(--dark-theme);
+}
+
+.dark-theme {
+  background-color: var(--light-theme);
+  transition: background-color 0.5s ease 0s;
+}
+
+.first-section {
+  font-family: "Playfair Display", serif;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: var(--white-color);
+  transition: color 0.3s ease 0s;
+  height: 100vh;
+  width: 100vw;
+  
+  /* pour eviter le "FOUC" */
+  visibility: hidden;
+}
+
+.dark-theme .first-section {
+  font-size: 5vw;
+  color: var(--dark-theme);
+}
+
+.text-section {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.first-line {
+  font-size: clamp(24px, 5vw, 80px);
+  letter-spacing: 1px;
+}
+
+.second-line {
+  font-size: clamp(28px, 7vw, 95px);
+  letter-spacing: 10px;
+}
+
+.mail {
+  font-family: "Playfair Display", serif;
+  text-transform: none;
+  font-size: clamp(12px, 1.6vw, 16px);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  color: #f8f8f8;
+  text-decoration: none;
+}
+
+.copy-notification {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--white-color);
+  background-color: rgba(50, 50, 50, 0.1);
+  border: 1px solid rgb(130, 130, 130);
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: clamp(11px, .8vw, 12px);
+  margin-top: 25px;
+}
+
+.dark-theme .copy-notification {
+  color: #0a0a0a;
+  background-color: rgba(0, 0, 0, 0.055);
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.copy-notification.show {
+  display: block;
+}
+
+
+
+
+
+/* MAX WIDTH RESPONSIVE */
+
+@media screen and (max-width: 1200px) {
+  .copy-notification {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white-color);
+    background-color: rgba(50, 50, 50, 0.1);
+    border: 1px solid rgb(130, 130, 130);
+    border-radius: 5px;
+    margin-top: 25px;
+  }
+
+  .dark-theme .copy-notification {
+    color: #0a0a0a;
+    background-color: rgba(0, 0, 0, 0.055);
+    border: 1px solid rgb(0, 0, 0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 45px 10px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .copy-notification {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white-color);
+    background-color: rgba(50, 50, 50, 0.1);
+    border: 1px solid rgb(130, 130, 130);
+    border-radius: 5px;
+    margin-top: 25px;
+  }
+
+  .dark-theme .copy-notification {
+    color: #0a0a0a;
+    background-color: rgba(0, 0, 0, 0.055);
+    border: 1px solid rgb(0, 0, 0);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .buttondarkmode {
+    position: fixed;
+    right: 0vh;
+    bottom: 2vh;
+    margin: 0 30px;
+    pointer-events: auto;
+    border-radius: 30px;
+    width: 18px;
+    height: 18px;
+    border: none;
+    background-color: var(--light-theme);
+    transition: background-color 0.5s ease 0s, transform 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .copy-notification {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white-color);
+    background-color: rgba(50, 50, 50, 0.1);
+    border: 1px solid rgb(130, 130, 130);
+    border-radius: 5px;
+    margin-top: 25px;
+  }
+
+  .dark-theme .copy-notification {
+    color: #0a0a0a;
+    background-color: rgba(0, 0, 0, 0.055);
+    border: 1px solid rgb(0, 0, 0);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .scroll-progress, .scroll-bar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .copy-notification {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white-color);
+    background-color: rgba(50, 50, 50, 0.1);
+    border: 1px solid rgb(130, 130, 130);
+    border-radius: 5px;
+    margin-top: 25px;
+  }
+
+  .dark-theme .copy-notification {
+    color: #0a0a0a;
+    background-color: rgba(0, 0, 0, 0.055);
+    border: 1px solid rgb(0, 0, 0);
+  }
+}
+
+/* MAX HEIGHT RESPONSIVE */
+
+@media screen and (max-height: 800px) {
+  .navbar {
+    padding: 25px 80px;
+  }
+}
+
+@media screen and (max-height: 800px) and (max-width: 670px) {
+  .navbar {
+    padding: 25px 10px;
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Louis Lefrancois - Portfolio</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body id="my-scrollbar">
+
+  <div class="loader" id="loader">
+    <div class="loadingText">
+        LOADING
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="logo">
+      <a href="./">
+        Louis.LFRCS
+      </a>
+    </div>
+    <div class="menu">
+      <a href="./about">About</a>
+      <a href="./contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="full-container">
+    <a href="./works/burberry" class="container">
+      <div class="overlay">
+        <h1>Burberry</h1>
+        <p>Open Project</p>
+      </div>
+      <img src="./src/images/burberry/burberry1920x1080.jpg" alt="" />
+    </a>
+  </div>
+
+  <div class="scroll-down" id="scroll-down">scroll down</div>
+
+  <div class="full-container">
+    <a href="./works/hermes" class="container">
+      <div class="overlay">
+        <h1>Hermès</h1>
+        <p>Open Project</p>
+      </div>
+      <img src="./src/images/hermès/hermes1920x1080.jpg" alt="" />
+    </a>
+  </div>
+
+  <div class="full-container">
+    <div class="container">
+      <div class="overlay">
+        <h1>Coming Soon</h1>
+        <p>Open Project</p>
+      </div>
+      <img src="./src/images/soon/soon.jpg" alt="" />
+    </div>
+  </div>
+
+  <button class="buttondarkmode" onclick="toggleTheme()"></button>
+
+  <div class="scroll-progress">
+    <div class="scroll-bar"></div>
+  </div>
+
+
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="./gsap-index.js"></script>
+  
+  <script src="./src/toggle-theme.js"></script>
+  <script src="./scroll-bar-index.js"></script>
+  <script src="./src/smooth-scroll.js"></script>
+  <script src="./preloader.js"></script>
+</body>
+
+</html>

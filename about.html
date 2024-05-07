@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Louis Lefrancois - Portfolio</title>
+  <link rel="stylesheet" href="./src/styles/about.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="./">
+        Louis.LFRCS
+      </a>
+    </div>
+    <div class="menu">
+      <a href="./about" class="active">About</a>
+      <a href="./contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="first-section">
+    <div class="first-line">Front-End</div>
+    <div class="second-line">Developer</div>
+  </div>
+
+  <div class="both">
+    <div class="about">
+      <div class="text-headline">about me</div>
+      <div class="first-separator"></div>
+      <div class="text-centered">
+        I'm an aspiring front-end developer eager to enhance my skills <br>in web
+        development!
+        <br />
+        I enjoy <span>creating</span> and <span>integrating</span> content
+        <span>on websites</span>. <br /><br />
+        Today, I'm testing myself in design, and I'm trying to create
+        <span>cool things</span> on the internet.
+      </div>
+    </div>
+
+    <div class="looking-for">
+      <div class="text-headline">currently I'm looking for..</div>
+      <div class="second-separator"></div>
+      <div class="text-centered">
+        ..a company to start <br />the
+        <a href="https://openclassrooms.com/fr/paths/877-developpeur-dapplication-javascript-react" target="_blank"
+          rel="noopener noreferrer"><span>JavaScript React Application Developer</span></a> training
+        <br />
+        offered by <a href="https://openclassrooms.com/fr/" target="_blank"
+          rel="noopener noreferrer"><span>OpenClassrooms</span></a>.
+        <br />
+        <br />
+        The program lasts <span>24 months</span>,
+        <br />
+        with a schedule of <span>1 to 2 days in training</span> and
+        <span>3 to 4 days in the company</span>. <br /><br />
+        I am <span>flexible to work</span> from
+        either <span>Lille</span> or <span>Amiens</span>,
+        <br />
+        but I'm used to working <span>remotely</span>.
+        <br />
+        <br />
+        Feel free to check out my resume! :)
+      </div>
+      <a class="downloadResume" href="./src/resume.pdf" download="resume.pdf">Download my resume</a>
+    </div>
+  </div>
+
+  <button class="buttondarkmode" onclick="toggleTheme()"></button>
+
+  <div class="scroll-progress">
+    <div class="scroll-bar"></div>
+  </div>
+
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="./src/gsap-about.js"></script>
+
+  <script src="./src/toggle-theme.js"></script>
+  <script src="./src/scroll-bar.js"></script>
+  <script src="./src/smooth-scroll.js"></script>
+</body>
+
+</html>

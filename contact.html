@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Louis Lefrancois - Portfolio</title>
+  <link rel="stylesheet" href="./src/styles/contact.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="./">
+        Louis.LFRCS
+      </a>
+    </div>
+    <div class="menu">
+      <a href="./about">About</a>
+      <a href="./contact.html" class="active">Contact</a>
+    </div>
+  </nav>
+
+  <div class="first-section">
+    <div class="text-section">
+      <div class="first-line">Drop me</div>
+      <div class="second-line">An Email</div>
+    </div>
+    <div class="mail-container">
+      <!-- <div class="mail">louislefrancois.pro@gmail.com</div> -->
+      <a href="mailto:louislefrancois.pro@gmail.com" class="mail">louislefrancois.pro@gmail.com</a>
+      <div class="copy-notification">copied to clipboard !</div>
+    </div>
+  </div>
+
+  <button class="buttondarkmode" onclick="toggleTheme()"></button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="./src/gsap-contact.js"></script>
+  
+  <script src="./src/toggle-theme.js"></script>
+  <script src="./src/copyEmail.js"></script>
+</body>
+
+</html>
