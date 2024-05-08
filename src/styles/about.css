@@ -193,6 +193,10 @@ body::-webkit-scrollbar {
 .first-separator,
 .second-separator {
   background-color: rgba(140, 140, 140, 0.45);
+  transition: background-color 0.3s ease 0s;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 1px; 
 }
 
 .dark-theme .first-separator,
@@ -201,18 +205,11 @@ body::-webkit-scrollbar {
 }
 
 .first-separator {
-  margin-top: 10px;
-  margin-bottom: 20px;
   width: 35%;
-  height: 1px;
-  transition: background-color 0.3s ease 0s;
 }
 
 .second-separator {
-  margin-top: 10px;
-  margin-bottom: 20px;
   width: 55%;
-  height: 1px;
 }
 
 .downloadResume {
