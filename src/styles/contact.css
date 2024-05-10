@@ -213,6 +213,10 @@ body {
   .text-section {
     margin-bottom: 15px;
   }
+
+  .first-line {
+    letter-spacing: 3px;
+  }
 }
 
 @media screen and (max-width: 740px) {
