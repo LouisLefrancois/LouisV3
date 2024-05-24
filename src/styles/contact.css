@@ -132,12 +132,12 @@ body {
 }
 
 .first-line {
-  font-size: clamp(24px, 5vw, 80px);
+  font-size: clamp(26px, 5vw, 80px);
   letter-spacing: 1px;
 }
 
 .second-line {
-  font-size: clamp(28px, 7vw, 95px);
+  font-size: clamp(30px, 7vw, 95px);
   letter-spacing: 10px;
 }
 
@@ -208,6 +208,14 @@ body {
 @media screen and (max-width: 768px) {
   .navbar {
     padding: 45px 10px;
+  }
+
+  .text-section {
+    margin-bottom: 15px;
+  }
+
+  .first-line {
+    letter-spacing: 3px;
   }
 }
 
