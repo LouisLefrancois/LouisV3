@@ -1,6 +1,3 @@
-base
-
-
 window.onload = function () {
   var video = document.querySelector(".firstContainer video");
   video.play(); // démarrage automatique de la vidéo
