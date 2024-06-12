@@ -19,7 +19,7 @@ L'objectif principal de ce projet était de concevoir et mettre en œuvre une pa
 Bien que ce projet ne soit pas affilié à Burberry et soit uniquement destiné à des fins d'entraînement, il sert de démonstration des compétences en développement front-end et de l'attention portée aux détails.
 
 **Visualiser le projet en ligne :** 
-https://louislefrancois.github.io/Burberry-Monogram-Collection/
+https://louislefrancois.github.io/Burberry-Monogram-Collection
 
 **Dépôt Github :**
 https://github.com/LouisLefrancois/Burberry-Monogram-Collection
@@ -27,15 +27,17 @@ https://github.com/LouisLefrancois/Burberry-Monogram-Collection
 
 ## 2 - Hermes-Monogram-Collection
 
-Ce projet est une one-page dédiée à la présentation de la collaboration entre Hermès et le photographe Hiroshi Sugimoto. Comme pour le premier projet, il a été créé dans le cadre d'un exercice personnel visant à perfectionner mes compétences.
+Ce projet est une one-page dédiée à la présentation de la collaboration entre Hermès et Hiroshi Sugimoto. Il a été créé dans le cadre d'un exercice personnel visant à développer davantage mes compétences en HTML & CSS.
 
-L'objectif principal de ce projet était de concevoir et de mettre en œuvre une page web élégante et immersive qui met en valeur les œuvres distinctives de Sugimoto en collaboration avec la marque emblématique Hermès. La page présente des galeries d'images captivantes, des informations détaillées sur la collaboration et des éléments interactifs pour captiver les visiteurs.
+L'objectif principal de ce projet était de concevoir et de réaliser une page web sobre et simple mettant en valeur les caractéristiques clés de la collaboration. La page mélange du contenu en anglais et en japonais et comprend des sections telles que des informations sur l'artiste Hiroshi Sugimoto ainsi que des détails sur leur collaboration.
+
+Bien que ce projet ne soit pas affilié à Hermès et soit uniquement destiné à des fins d'entraînement, il sert de démonstration des compétences en développement front-end et de l'attention portée aux détails.
 
 **Visualiser le projet en ligne :**
-bientôt
+https://github.com/LouisLefrancois/Hermes-Hiroshi-Sugimoto
 
 **Dépôt Github :**
-bientôt
+https://louislefrancois.github.io/Hermes-Hiroshi-Sugimoto
 
 *Ces projets ont été réalisés exclusivement à des fins d'entraînement et ne visent aucunement un usage commercial.*
 
