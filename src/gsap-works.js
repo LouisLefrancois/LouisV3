@@ -13,10 +13,10 @@ if (window.innerWidth > 768) {
   gsap.timeline().from('.text-section', { duration: 1, x: window.innerWidth, ease: 'power2.out' }, 1.2);
 }
 
-gsap.timeline().from('.transition', { duration: 1.2, scaleY: -1, y: -window.innerHeight,  ease: 'power4.inOut' }, .5)
+gsap.timeline().from('.transition', { duration: 1.2, scaleY: -1, y: -window.innerHeight, transformOrigin: 'bottom', ease: 'power4.inOut' }, .5)
 
 function goToPage(url) {
-  gsap.to('.transition', { duration: 1, scaleY: 1, transformOrigin: 'bottom', ease: 'power4.inOut', onComplete: () => { window.location.href = url; }
+  gsap.to('.transition', { duration: 1, scaleY: 2, transformOrigin: 'bottom', ease: 'power4.inOut', onComplete: () => { window.location.href = url; }
   });
 }
 
