@@ -5,15 +5,14 @@ const buttondarkmode = document.querySelector('.buttondarkmode');
 
 window.addEventListener('load', () => {
 
-  gsap.set([navbar, fullcontainer, scrolldowntxt, buttondarkmode], { clearProps: 'all' });
+    const TL = gsap.timeline({ paused: true });
 
-  const TL = gsap.timeline({ paused: true });
-  TL
-    .from(navbar, .2, { top: 10, opacity: 0 }, .5) //  durée d'exec , sec avant exec
-    .from(fullcontainer, .75, { opacity: 0 }, 1) 
-    .from(scrolldowntxt, .75, { opacity: 0 }, 1.5) 
-    .from(buttondarkmode, .75, { opacity: 0 }, 1.5) 
-  TL.play();
+    TL
+        .from(navbar, .2, { top: 10, opacity: 0 }, .5) //  durée d'exec , sec avant exec
+        .from(fullcontainer, .75, { opacity: 0 }, 1) 
+        .from(scrolldowntxt, .75, { opacity: 0 }, 1.5) 
+        .from(buttondarkmode, .75, { opacity: 0 }, 1.5) 
+    TL.play();
 });
 
 function goToPage(url) {
