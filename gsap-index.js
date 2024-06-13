@@ -16,6 +16,7 @@ function startAnimations() {
     onComplete: function () {
       fullcontainer.forEach(container => {
         container.style.visibility = 'visible';
+        container.style.opacity = '1';
       });
     }
   });
@@ -53,7 +54,7 @@ function goToPage(url) {
   gsap.to('.full-container, .scroll-down', {
     duration: .75,
     x: -window.innerWidth,
-    opacity: 1,
+    opacity: 0,
     ease: 'power2.inOut',
     onComplete: () => {
       window.location.href = url;
