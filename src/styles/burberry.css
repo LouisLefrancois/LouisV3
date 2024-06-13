@@ -37,7 +37,7 @@ body::-webkit-scrollbar {
   background: var(--dark-theme);
   /* -webkit-transform: scaleY(0); */
   /* transform: scaleY(0); */
-  transform-origin: bottom;
+  /* transform-origin: bottom; */
 }
 
 .navbar {
