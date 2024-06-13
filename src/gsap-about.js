@@ -1,5 +1,6 @@
 const firstline = document.querySelector('.first-line');
 const secondline = document.querySelector('.second-line');
+const firstSection = document.querySelector('.first-section'); // Sélecteur pour la première section (about ou contact)
 
 document.addEventListener('DOMContentLoaded', function() {
   gsap.timeline({
@@ -8,17 +9,16 @@ document.addEventListener('DOMContentLoaded', function() {
       secondline.style.visibility = 'visible';
     }
   });
+
+  // Animation initiale de la première section
+  gsap.timeline().from(firstSection, {})
+    .from(firstline, { duration: 1.1, x: window.innerWidth, ease: 'power2.out' }, 0)
+    .from(secondline, { duration: 1.4, x: window.innerWidth, ease: 'power2.out' }, 0);
 });
 
-gsap.set('.first-section', {});
-
-gsap.timeline().from('.first-section', {})
-  .from('.first-line', { duration: 1.1, x: window.innerWidth, ease: 'power2.out' }, 0)
-  .from('.second-line', { duration: 1.4, x: window.innerWidth, ease: 'power2.out' }, 0);
-
 function goToPage(url) {
-  gsap.to('.first-line', { duration: 1, x: window.innerWidth, ease: 'power2.inOut' });
-  gsap.to('.second-line', { duration: 1.2, x: window.innerWidth, ease: 'power2.inOut', onComplete: () => {
+  gsap.to(firstline, { duration: 1, x: window.innerWidth, ease: 'power2.inOut' });
+  gsap.to(secondline, { duration: 1.2, x: window.innerWidth, ease: 'power2.inOut', onComplete: () => {
     window.location.href = url;
   }});
 }
@@ -31,7 +31,7 @@ document.querySelectorAll('.menu a').forEach(link => {
   });
 });
 
-// Cette partie du code gère le retour en arrière (Browser Back)
+// Gestion du retour en arrière (Browser Back)
 window.addEventListener('popstate', () => {
-  gsap.set(['.first-line', '.second-line'], { x: window.innerWidth });
+  gsap.set([firstline, secondline], { clearProps: 'all' }); // Réinitialise les propriétés CSS à leur état initial
 });
