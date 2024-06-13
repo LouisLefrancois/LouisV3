@@ -4,6 +4,12 @@ const scrolldowntxt = document.querySelector('.scroll-down');
 const buttondarkmode = document.querySelector('.buttondarkmode');
 
 window.addEventListener('load', () => {
+    // Check if 'Page2Visited' exists in sessionStorage
+    if (sessionStorage.getItem("Page2Visited")) {
+        sessionStorage.removeItem("Page2Visited");
+        window.location.reload(true); // force refresh page1
+        return; // Exit the function to avoid running the animations again
+    }
 
     const TL = gsap.timeline({ paused: true });
 
@@ -15,16 +21,16 @@ window.addEventListener('load', () => {
     TL.play();
 });
 
-  document.querySelectorAll('.menu a, .full-container a').forEach(link => {
+document.querySelectorAll('.menu a, .full-container a').forEach(link => {
     link.addEventListener('click', function(event) {
-      event.preventDefault(); // empêche le comportement par défaut du lien
-      const url = this.getAttribute('href'); // récupère lien
-      goToPage(url); // déclanche la transition de page
+        event.preventDefault(); // empêche le comportement par défaut du lien
+        const url = this.getAttribute('href'); // récupère lien
+        goToPage(url); // déclanche la transition de page
     });
-  });
+});
 
-  function goToPage(url) {
+function goToPage(url) {
     gsap.to('.full-container, .scroll-down', { duration: .75, x: -window.innerWidth, opacity: 0, ease: 'power2.inOut', onComplete: () => {
-      window.location.href = url;
+        window.location.href = url;
     }});
-  }
+}
