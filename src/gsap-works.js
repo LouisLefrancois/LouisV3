@@ -1,30 +1,19 @@
 const textsection = document.querySelector('.text-section');
 
-function startAnimations() {
+document.addEventListener('DOMContentLoaded', function () {
   gsap.timeline({
     onComplete: function () {
       textsection.style.visibility = 'visible';
       textsection.style.mixBlendMode = 'difference';
     }
   });
+});
 
-  if (window.innerWidth > 768) {
-    gsap.timeline().from('.text-section', { duration: 1, x: window.innerWidth, ease: 'power2.out' }, 1.2);
-  }
-
-  gsap.timeline().from('.transition', { duration: 1.2, scaleY: -1, y: -window.innerHeight, transformOrigin: 'bottom', ease: 'power4.inOut' }, .5);
+if (window.innerWidth > 768) {
+  gsap.timeline().from('.text-section', { duration: 1, x: window.innerWidth, ease: 'power2.out' }, 1.2);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  startAnimations();
-});
-
-window.addEventListener('pageshow', function(event) {
-  if (event.persisted) {
-    // La page a été restaurée depuis le cache
-    startAnimations();
-  }
-});
+gsap.timeline().from('.transition', { duration: 1.2, scaleY: -1, y: -window.innerHeight, transformOrigin: 'bottom', ease: 'power4.inOut' }, .5)
 
 function goToPage(url) {
   gsap.to('.transition', { duration: 1, scaleY: 1, transformOrigin: 'bottom', ease: 'power4.inOut', onComplete: () => { window.location.href = url; }
