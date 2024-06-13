@@ -11,15 +11,15 @@ function resetAnimations() {
   gsap.set(buttondarkmode, { clearProps: "all" });
 }
 
-function startAnimations() {
-  const TL = gsap.timeline({
-    onComplete: function () {
-      fullcontainer.forEach(container => {
-        container.style.visibility = 'visible';
-        container.style.opacity = '1';
-      });
-    }
-  });
+// function startAnimations() {
+//   const TL = gsap.timeline({
+//     onComplete: function () {
+//       fullcontainer.forEach(container => {
+//         container.style.visibility = 'visible';
+//         container.style.opacity = '1';
+//       });
+//     }
+//   });
 
   TL
     .from(navbar, .2, { top: 10, opacity: 0 }, .5) // durée d'exec, sec avant exec
