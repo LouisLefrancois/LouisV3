@@ -1,10 +1,8 @@
 const firstline = document.querySelector('.first-line');
 const secondline = document.querySelector('.second-line');
 const mailcontainer = document.querySelector('.mail-container');
-const firstSection = document.querySelector('.first-section');
 
-// Fonction pour initialiser les animations
-function initAnimations() {
+document.addEventListener('DOMContentLoaded', function() {
   gsap.timeline({
     onComplete: function() {
       firstline.style.visibility = 'visible';
@@ -12,38 +10,26 @@ function initAnimations() {
       mailcontainer.style.visibility = 'visible';
     }
   });
-
-  // Animation initiale de la première section
-  gsap.timeline().from(firstSection, {})
-    .from(firstline, { duration: 1, x: -window.innerWidth, ease: 'power2.out' }, 0)
-    .from(secondline, { duration: 1.15, x: -window.innerWidth, ease: 'power2.out' }, 0)
-    .from(mailcontainer, { duration: 1.3, x: -window.innerWidth, ease: 'power2.out' }, 0);
-}
-
-// Appel de la fonction d'initialisation des animations lorsque le DOM est chargé
-document.addEventListener('DOMContentLoaded', function() {
-  initAnimations();
 });
 
-// Fonction pour gérer la transition de page
+gsap.set('.first-section', {});
+
+gsap.timeline().from('.first-section', {})
+  .from('.first-line', { duration: 1, x: -window.innerWidth, ease: 'power2.out' }, 0)
+  .from('.second-line', { duration: 1.4, x: -window.innerWidth, ease: 'power2.out' }, 0)
+  .from('.mail-container', { duration: 1.75, x: -window.innerWidth, ease: 'power2.out' }, 0)
+
 function goToPage(url) {
-  gsap.to(firstline, { duration: 1, x: -window.innerWidth, ease: 'power2.inOut' });
-  gsap.to(secondline, { duration: 1.15, x: -window.innerWidth, ease: 'power2.inOut' });
-  gsap.to(mailcontainer, { duration: 1.3, x: -window.innerWidth, ease: 'power2.inOut', onComplete: () => {
-    window.location.href = url;
-  }});
+  gsap.to('.first-line', { duration: 1, x: -window.innerWidth, ease: 'power2.inOut'}, )
+  gsap.to('.second-line', { duration: 1.15, x: -window.innerWidth, ease: 'power2.inOut'}, )
+  gsap.to('.mail-container', { duration: 1.3, x: -window.innerWidth, ease: 'power2.inOut', onComplete: () => { window.location.href = url; }
+  });
 }
 
-// Écouteurs d'événement pour les liens du menu
 document.querySelectorAll('.menu a').forEach(link => {
   link.addEventListener('click', function(event) {
-    event.preventDefault(); // Empêche le comportement par défaut du lien
-    const url = this.getAttribute('href'); // Récupère l'URL du lien
-    goToPage(url); // Déclenche la transition de page
+    event.preventDefault(); // empêche le comportement par défaut du lien
+    const url = this.getAttribute('href'); // récupère lien
+    goToPage(url); // déclanche la transition de page
   });
-});
-
-// Gestion du retour en arrière (Browser Back)
-window.addEventListener('popstate', () => {
-  initAnimations(); // Réinitialise les animations lors du retour en arrière
 });
