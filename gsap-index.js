@@ -1,29 +1,30 @@
-// Cette fonction gère la transition de sortie vers une nouvelle page
-function goToPage(url) {
-  gsap.to(['.full-container', '.scroll-down'], {
-    duration: 0.75,
-    x: -window.innerWidth,
-    opacity: 0,
-    ease: 'power2.inOut',
-    onComplete: () => {
-      window.location.href = url; // Redirection vers la nouvelle URL
-    }
-  });
-}
+const fullcontainer = document.querySelectorAll('.full-container');
+const navbar = document.querySelector('.navbar');
+const scrolldowntxt = document.querySelector('.scroll-down');
+const buttondarkmode = document.querySelector('.buttondarkmode');
 
-// Cette partie du code initialise l'animation à la fin du chargement de la page
 window.addEventListener('load', () => {
-  const TL = gsap.timeline({ paused: true });
 
-  TL.from('.navbar', { duration: 0.2, top: 10, opacity: 0 }, 0.5)
-    .from('.full-container', { duration: 0.75, opacity: 0 }, 1)
-    .from('.scroll-down', { duration: 0.75, opacity: 0 }, 1.5)
-    .from('.buttondarkmode', { duration: 0.75, opacity: 0 }, 1.5);
+    const TL = gsap.timeline({ paused: true });
 
-  TL.play();
+    TL
+        .from(navbar, .2, { top: 10, opacity: 0 }, .5) //  durée d'exec , sec avant exec
+        .from(fullcontainer, .75, { opacity: 0 }, 1) 
+        .from(scrolldowntxt, .75, { opacity: 0 }, 1.5) 
+        .from(buttondarkmode, .75, { opacity: 0 }, 1.5) 
+    TL.play();
 });
 
-// Cette partie du code gère le retour en arrière (Browser Back)
-window.addEventListener('popstate', () => {
-  gsap.set(['.full-container', '.scroll-down'], { x: -window.innerWidth, opacity: 0 });
-});
+function goToPage(url) {
+    gsap.to('.full-container, .scroll-down', { duration: .75, x: -window.innerWidth, opacity: 0, ease: 'power2.inOut', onComplete: () => {
+      window.location.href = url;
+    }});
+  }
+  
+  document.querySelectorAll('.menu a, .full-container a').forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault(); // empêche le comportement par défaut du lien
+      const url = this.getAttribute('href'); // récupère lien
+      goToPage(url); // déclanche la transition de page
+    });
+  });
