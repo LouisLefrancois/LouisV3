@@ -1,4 +1,4 @@
-const fullcontainer = document.querySelectorAll('.full-container');
+const fullcontainer = document.querySelector('.full-container');
 const navbar = document.querySelector('.navbar');
 const scrolldowntxt = document.querySelector('.scroll-down');
 const buttondarkmode = document.querySelector('.buttondarkmode');
@@ -27,7 +27,7 @@ window.addEventListener('pageshow', function(event) {
 });
 
 function goToPage(url) {
-  gsap.to('.full-container, .scroll-down', {
+  gsap.to('.full-container, .scroll-down, .buttondarkmode', {
     duration: 0.75,
     x: -window.innerWidth,
     opacity: 0,
@@ -56,7 +56,7 @@ window.addEventListener('popstate', function(event) {
 
 // Fonction pour ajouter l'état de navigation
 function goToPageWithState(url) {
-  gsap.to('.full-container, .scroll-down', {
+  gsap.to('.full-container, .scroll-down, .buttondarkmode', {
     duration: 0.75,
     x: -window.innerWidth,
     opacity: 0,
