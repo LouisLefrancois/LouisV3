@@ -1,9 +1,10 @@
 const firstline = document.querySelector('.first-line');
 const secondline = document.querySelector('.second-line');
 const mailcontainer = document.querySelector('.mail-container');
-const firstSection = document.querySelector('.first-section'); // Sélecteur pour la première section (contact)
+const firstSection = document.querySelector('.first-section');
 
-document.addEventListener('DOMContentLoaded', function() {
+// Fonction pour initialiser les animations
+function initAnimations() {
   gsap.timeline({
     onComplete: function() {
       firstline.style.visibility = 'visible';
@@ -17,8 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
     .from(firstline, { duration: 1, x: -window.innerWidth, ease: 'power2.out' }, 0)
     .from(secondline, { duration: 1.15, x: -window.innerWidth, ease: 'power2.out' }, 0)
     .from(mailcontainer, { duration: 1.3, x: -window.innerWidth, ease: 'power2.out' }, 0);
+}
+
+// Appel de la fonction d'initialisation des animations lorsque le DOM est chargé
+document.addEventListener('DOMContentLoaded', function() {
+  initAnimations();
 });
 
+// Fonction pour gérer la transition de page
 function goToPage(url) {
   gsap.to(firstline, { duration: 1, x: -window.innerWidth, ease: 'power2.inOut' });
   gsap.to(secondline, { duration: 1.15, x: -window.innerWidth, ease: 'power2.inOut' });
@@ -27,6 +34,7 @@ function goToPage(url) {
   }});
 }
 
+// Écouteurs d'événement pour les liens du menu
 document.querySelectorAll('.menu a').forEach(link => {
   link.addEventListener('click', function(event) {
     event.preventDefault(); // Empêche le comportement par défaut du lien
@@ -37,5 +45,5 @@ document.querySelectorAll('.menu a').forEach(link => {
 
 // Gestion du retour en arrière (Browser Back)
 window.addEventListener('popstate', () => {
-  gsap.set([firstline, secondline, mailcontainer], { clearProps: 'all' }); // Réinitialise les propriétés CSS à leur état initial
+  initAnimations(); // Réinitialise les animations lors du retour en arrière
 });
