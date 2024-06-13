@@ -35,9 +35,8 @@ body::-webkit-scrollbar {
   top: 0;
   left: 0;
   background: var(--dark-theme);
-  /* -webkit-transform: scaleY(0); */
-  /* transform: scaleY(0); */
-  /* transform-origin: bottom; */
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
 }
 
 .navbar {
