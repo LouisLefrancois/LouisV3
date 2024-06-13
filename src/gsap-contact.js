@@ -1,6 +1,7 @@
 const firstline = document.querySelector('.first-line');
 const secondline = document.querySelector('.second-line');
 const mailcontainer = document.querySelector('.mail-container');
+const firstSection = document.querySelector('.first-section'); // Sélecteur pour la première section (contact)
 
 document.addEventListener('DOMContentLoaded', function() {
   gsap.timeline({
@@ -10,19 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
       mailcontainer.style.visibility = 'visible';
     }
   });
+
+  // Animation initiale de la première section
+  gsap.timeline().from(firstSection, {})
+    .from(firstline, { duration: 1, x: -window.innerWidth, ease: 'power2.out' }, 0)
+    .from(secondline, { duration: 1.15, x: -window.innerWidth, ease: 'power2.out' }, 0)
+    .from(mailcontainer, { duration: 1.3, x: -window.innerWidth, ease: 'power2.out' }, 0);
 });
 
-gsap.set('.first-section', {});
-
-gsap.timeline().from('.first-section', {})
-  .from('.first-line', { duration: 1, x: -window.innerWidth, ease: 'power2.out' }, 0)
-  .from('.second-line', { duration: 1.4, x: -window.innerWidth, ease: 'power2.out' }, 0)
-  .from('.mail-container', { duration: 1.75, x: -window.innerWidth, ease: 'power2.out' }, 0);
-
 function goToPage(url) {
-  gsap.to('.first-line', { duration: 1, x: -window.innerWidth, ease: 'power2.inOut' });
-  gsap.to('.second-line', { duration: 1.15, x: -window.innerWidth, ease: 'power2.inOut' });
-  gsap.to('.mail-container', { duration: 1.3, x: -window.innerWidth, ease: 'power2.inOut', onComplete: () => {
+  gsap.to(firstline, { duration: 1, x: -window.innerWidth, ease: 'power2.inOut' });
+  gsap.to(secondline, { duration: 1.15, x: -window.innerWidth, ease: 'power2.inOut' });
+  gsap.to(mailcontainer, { duration: 1.3, x: -window.innerWidth, ease: 'power2.inOut', onComplete: () => {
     window.location.href = url;
   }});
 }
@@ -35,7 +35,7 @@ document.querySelectorAll('.menu a').forEach(link => {
   });
 });
 
-// Cette partie du code gère le retour en arrière (Browser Back)
+// Gestion du retour en arrière (Browser Back)
 window.addEventListener('popstate', () => {
-  gsap.set(['.first-line', '.second-line', '.mail-container'], { x: -window.innerWidth });
+  gsap.set([firstline, secondline, mailcontainer], { clearProps: 'all' }); // Réinitialise les propriétés CSS à leur état initial
 });
