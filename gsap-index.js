@@ -15,12 +15,6 @@ window.addEventListener('load', () => {
     TL.play();
 });
 
-function goToPage(url) {
-    gsap.to('.full-container, .scroll-down', { duration: .75, x: -window.innerWidth, opacity: 0, ease: 'power2.inOut', onComplete: () => {
-      window.location.href = url;
-    }});
-  }
-  
   document.querySelectorAll('.menu a, .full-container a').forEach(link => {
     link.addEventListener('click', function(event) {
       event.preventDefault(); // empêche le comportement par défaut du lien
@@ -28,3 +22,9 @@ function goToPage(url) {
       goToPage(url); // déclanche la transition de page
     });
   });
+
+  function goToPage(url) {
+    gsap.to('.full-container, .scroll-down', { duration: .75, x: -window.innerWidth, opacity: 0, ease: 'power2.inOut', onComplete: () => {
+      window.location.href = url;
+    }});
+  }
