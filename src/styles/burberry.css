@@ -435,9 +435,9 @@ span {
     margin-bottom: 30px;
   }
 
-  .details img:first-child {
-    margin-bottom: 15vh;
-  }
+  /* .details img:first-child {
+    margin: 15vh;
+  } */
 
   .details-mobile {
     flex-wrap: wrap;
