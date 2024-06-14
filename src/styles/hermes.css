@@ -425,9 +425,9 @@ svg {
     margin-bottom: 30px;
   }
 
-  .details img:first-child {
+  /* .details img:first-child {
     margin-bottom: 15vh;
-  }
+  } */
 
   .details-mobile {
     flex-wrap: wrap;
