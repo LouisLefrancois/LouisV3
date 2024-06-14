@@ -430,8 +430,8 @@ svg {
   }
 
   .details-mobile {
-    padding: 10vh 0;
     flex-wrap: wrap;
+    gap: 10px;
   }
 
   .details-mobile img {
