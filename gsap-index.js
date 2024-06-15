@@ -9,9 +9,7 @@ function resetFullContainers() {
   });
 }
 
-window.addEventListener('load', () => {
-  resetFullContainers();
-
+function playTimeline() {
   const TL = gsap.timeline({ paused: true });
   TL
       .from(navbar, .2, { top: 10, opacity: 0 }, .5) //  durée d'exec , sec avant exec
@@ -19,6 +17,11 @@ window.addEventListener('load', () => {
       .from(scrolldowntxt, .75, { opacity: 0 }, 1.5) 
       .from(buttondarkmode, .75, { opacity: 0 }, 1.5) 
   TL.play();
+}
+
+window.addEventListener('load', () => {
+  resetFullContainers();
+  playTimeline();
 });
 
 function goToPage(url, element) {
@@ -40,5 +43,6 @@ document.querySelectorAll('.menu a, .full-container a').forEach(link => {
 window.addEventListener('pageshow', (event) => {
   if (event.persisted) {
     resetFullContainers();
+    playTimeline();
   }
 });
