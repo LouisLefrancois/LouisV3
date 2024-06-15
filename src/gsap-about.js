@@ -9,7 +9,6 @@ function resetAnimations() {
 function startAnimations() {
   gsap.timeline({
     onComplete: function () {
-      // Assurez-vous que la visibilité est correctement définie à la fin de l'animation
       gsap.set(firstline, { visibility: 'visible' });
       gsap.set(secondline, { visibility: 'visible' });
     },
