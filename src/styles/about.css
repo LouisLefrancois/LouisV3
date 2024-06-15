@@ -264,10 +264,12 @@ span {
 
 .first-line {
   padding-right: 10vw;
+  visibility: visible;
 }
 
 .second-line {
   padding-left: 10vw;
+  visibility: visible;
 }
 
 a {
