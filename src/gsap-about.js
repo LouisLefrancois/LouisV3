@@ -2,26 +2,26 @@ const firstline = document.querySelector(".first-line");
 const secondline = document.querySelector(".second-line");
 
 function resetAnimations() {
-  gsap.set(".first-line", { x: 0, visibility: 'visible'});
-  gsap.set(".second-line", { x: 0, visibility: 'visible'});
+  gsap.set(".first-line", { x: 0, visibility: 'visible' });
+  gsap.set(".second-line", { x: 0, visibility: 'visible' });
 }
 
 function startAnimations() {
-  gsap
-    .timeline({
-      onComplete: function () {
-        firstline.style.visibility = "visible";
-        secondline.style.visibility = "visible";
-      },
-    })
+  gsap.timeline({
+    onComplete: function () {
+      // Assurez-vous que la visibilité est correctement définie à la fin de l'animation
+      gsap.set(firstline, { visibility: 'visible' });
+      gsap.set(secondline, { visibility: 'visible' });
+    },
+  })
     .from(
       ".first-line",
-      { duration: 1.1, x: window.innerWidth, visibility: 'visible', ease: "power2.out" },
+      { duration: 1.1, x: window.innerWidth, ease: "power2.out" },
       0
     )
     .from(
       ".second-line",
-      { duration: 1.4, x: window.innerWidth, visibility: 'visible', ease: "power2.out" },
+      { duration: 1.4, x: window.innerWidth, ease: "power2.out" },
       0
     );
 }
