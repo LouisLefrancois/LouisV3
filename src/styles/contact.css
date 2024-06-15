@@ -134,11 +134,13 @@ body {
 .first-line {
   font-size: clamp(26px, 5vw, 80px);
   letter-spacing: 1px;
+  visibility: visible;
 }
 
 .second-line {
   font-size: clamp(30px, 7vw, 95px);
   letter-spacing: 10px;
+  visibility: visible;
 }
 
 .mail {
@@ -150,6 +152,8 @@ body {
   color: #f8f8f8;
   text-decoration: none;
   transition: color 0.3s ease 0s;
+
+  visibility: visible;
 }
 
 .dark-theme .mail {
