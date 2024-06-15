@@ -39,7 +39,7 @@ document.querySelectorAll('.menu a, .full-container a').forEach(link => {
   });
 });
 
-// Réinitialise les styles des conteneurs lorsque l'utilisateur utilise les boutons du navigateur
+// reset les styles des containers + exec la fonction playTimeline lorsque btn nav est cliqué
 window.addEventListener('pageshow', (event) => {
   if (event.persisted) {
     resetFullContainers();
