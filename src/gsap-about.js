@@ -2,8 +2,8 @@ const firstline = document.querySelector(".first-line");
 const secondline = document.querySelector(".second-line");
 
 function resetAnimations() {
-  gsap.set(".first-line", { x: 0 });
-  gsap.set(".second-line", { x: 0 });
+  gsap.set(".first-line", { x: 0, visibility: 'visible'});
+  gsap.set(".second-line", { x: 0, visibility: 'visible'});
 }
 
 function startAnimations() {
