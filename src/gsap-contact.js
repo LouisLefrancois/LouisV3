@@ -3,9 +3,9 @@ const secondline = document.querySelector(".second-line");
 const mailcontainer = document.querySelector(".mail-container");
 
 function resetAnimations() {
-  gsap.set(".first-line", { x: 0 });
-  gsap.set(".second-line", { x: 0 });
-  gsap.set(".mail-container", { x: 0 });
+  gsap.set(".first-line", { x: 0, visibility: 'visible'});
+  gsap.set(".second-line", { x: 0, visibility: 'visible'});
+  gsap.set(".mail-container", { x: 0, visibility: 'visible'});
 }
 
 function startAnimations() {
