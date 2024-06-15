@@ -16,12 +16,12 @@ function startAnimations() {
     })
     .from(
       ".first-line",
-      { duration: 1.1, x: window.innerWidth, ease: "power2.out" },
+      { duration: 1.1, x: window.innerWidth, visibility: 'visible', ease: "power2.out" },
       0
     )
     .from(
       ".second-line",
-      { duration: 1.4, x: window.innerWidth, ease: "power2.out" },
+      { duration: 1.4, x: window.innerWidth, visibility: 'visible', ease: "power2.out" },
       0
     );
 }
