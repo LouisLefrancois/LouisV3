@@ -2,7 +2,6 @@ const firstline = document.querySelector('.first-line');
 const secondline = document.querySelector('.second-line');
 
 function resetAnimations() {
-  gsap.set('.first-section', {});
   gsap.set('.first-line', { x: 0 });
   gsap.set('.second-line', { x: 0 });
 }
@@ -13,8 +12,7 @@ function startAnimations() {
       firstline.style.visibility = 'visible';
       secondline.style.visibility = 'visible';
     }
-  }).from('.first-section', {})
-    .from('.first-line', { duration: 1.1, x: window.innerWidth, ease: 'power2.out' }, 0)
+  }).from('.first-line', { duration: 1.1, x: window.innerWidth, ease: 'power2.out' }, 0)
     .from('.second-line', { duration: 1.4, x: window.innerWidth, ease: 'power2.out' }, 0);
 }
 
