@@ -13,16 +13,18 @@ window.addEventListener('load', () => {
   TL.play();
 });
 
-function goToPage(url) {
-    gsap.to('.full-container, .scroll-down', { duration: .75, x: -window.innerWidth, opacity: 0, ease: 'power2.inOut', onComplete: () => {
+// 2 arg : url de destination + elmnt a anim
+function goToPage(url, element) {
+    gsap.to(element, { duration: .75, x: -window.innerWidth, opacity: 0, ease: 'power2.inOut', onComplete: () => {
       window.location.href = url;
     }});
-  }
+}
   
-  document.querySelectorAll('.menu a, .full-container a').forEach(link => {
-    link.addEventListener('click', function(event) {
-      event.preventDefault(); // empêche le comportement par défaut du lien
-      const url = this.getAttribute('href'); // récupère lien
-      goToPage(url); // déclanche la transition de page
-    });
+document.querySelectorAll('.menu a, .full-container a').forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault(); // empêche le comportement par défaut du lien, pour pouvoir voir les anims
+    const url = this.getAttribute('href'); // récupère lien
+    const container = this.closest('.full-container'); // récupère le conteneur parent
+    goToPage(url, container); // déclenche la transition de page
   });
+});
