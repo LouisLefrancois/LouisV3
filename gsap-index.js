@@ -12,10 +12,10 @@ function resetFullContainers() {
 function playTimeline() {
   const TL = gsap.timeline({ paused: true });
   TL
-      .from(navbar, .2, { top: 10, opacity: 0 }, .5) // durée d'exec , sec avant exec
-      .from(fullcontainer, .75, { opacity: 0 }, 1)
-      .from(scrolldowntxt, .75, { opacity: 0 }, 1.5)
-      .from(buttondarkmode, .75, { opacity: 0 }, 1.5);
+      .from(navbar, .2, { top: 10, opacity: 0 }, .5) //  durée d'exec , sec avant exec
+      .from(fullcontainer, .75, { opacity: 0 }, 1) 
+      .from(scrolldowntxt, .75, { opacity: 0 }, 1.5) 
+      .from(buttondarkmode, .75, { opacity: 0 }, 1.5) 
   TL.play();
 }
 
@@ -33,25 +33,16 @@ function goToPage(url, element) {
 document.querySelectorAll('.menu a, .full-container a').forEach(link => {
   link.addEventListener('click', function(event) {
     event.preventDefault(); // empêche le comportement par défaut du lien
-    const url = this.getAttribute('href'); // récupère le lien
+    const url = this.getAttribute('href'); // récupère lien
     const container = this.closest('.full-container'); // récupère le conteneur parent
     goToPage(url, container); // déclenche la transition de page
   });
 });
 
-function handleNavigationAnimations() {
-  resetFullContainers();
-  playTimeline();
-}
-
-// Réinitialise les styles des conteneurs et joue les animations d'entrée lors de l'utilisation des boutons du navigateur
+// Réinitialise les styles des conteneurs lorsque l'utilisateur utilise les boutons du navigateur
 window.addEventListener('pageshow', (event) => {
   if (event.persisted) {
-    handleNavigationAnimations();
+    resetFullContainers();
+    playTimeline();
   }
-});
-
-// Gère les animations lors de la navigation avec les boutons "retour" et "avancer"
-window.addEventListener('popstate', () => {
-  handleNavigationAnimations();
 });
