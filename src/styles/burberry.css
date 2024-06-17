@@ -197,6 +197,7 @@ a {
   font-family: "Roboto", sans-serif;
   font-size: 12.5px;
   letter-spacing: 0.75px;
+  line-height: 18px;
   width: 100%;
   margin: 45px 0px;
   color: rgba(255, 255, 255, 0.835);
