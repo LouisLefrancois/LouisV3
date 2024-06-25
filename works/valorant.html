@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Louis Lefrancois - Portfolio</title>
+  <link rel="icon" href="../src/images/logo.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="../src/styles/hermes.css" />
+</head>
+
+<body>
+  <div class="transition"></div>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="../">
+        Louis.LFRCS
+      </a>
+    </div>
+    <div class="menu">
+      <a href="../about">About</a>
+      <a href="../contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="firstContainer">
+    <img src="../src/images/valorant/p3s.png" alt="" style="display: none;" />
+    <video src="../src/images/valorant/valorantVid.mp4" type="video/mp4" autoplay loop muted></video> <!-- 'muted' important > firefox -->
+
+    <div class="text-section">
+      <div class="text-difference">
+        <div class="title">Valorant</div>
+        <p class="text-description">
+          This is a fictional project.
+          <br>
+          Here is my third project, developed and designed by myself: 
+          an interactive webpage showcasing Valorant agents' unique skills. 
+          Users can explore each agent's abilities through icons that link to brief demonstration videos, accompanied by descriptions.
+          It's responsive and user-friendly.
+        </p>
+
+        <a class="website-link"
+          href="https://valorant-agent-showcase.vercel.app/" target="_blank">Visit the website
+        </a>
+        <div class="infos-column">
+          <h3 class="text-h3">Date</h3>
+          <div class="text-under">June 2024</div>
+          <h3 class="text-h3">Roles</h3>
+          <div class="text-under">Developer, Designer</div>
+          <h3 class="text-h3">Techs</h3>
+          <div class="text-under">React, Tailwind & Figma</div>
+        </div>
+
+        <h4 class="hide-video" onclick="toggleVideo()">Hide Video</h4>
+        <h4 class="show-video" style="display: none" onclick="toggleVideo()">
+          Show Video
+        </h4>
+
+        <svg class="sound-on" xmlns="http://www.w3.org/2000/svg" style="display: none" width="24" height="24"
+          viewBox="0 0 24 24" fill="none" onclick="toggleSound('off')">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M15 8a5 5 0 0 1 0 8" />
+          <path d="M17.7 5a9 9 0 0 1 0 14" />
+          <path
+            d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" />
+        </svg>
+
+        <svg class="sound-off" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          onclick="toggleSound('on')">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M15 8a5 5 0 0 1 1.912 4.934m-1.377 2.602a5 5 0 0 1 -.535 .464" />
+          <path d="M17.7 5a9 9 0 0 1 2.362 11.086m-1.676 2.299a9 9 0 0 1 -.686 .615" />
+          <path
+            d="M9.069 5.054l.431 -.554a.8 .8 0 0 1 1.5 .5v2m0 4v8a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l1.294 -1.664" />
+          <path d="M3 3l18 18" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="details">
+    <h1 class="text-details">Project visuals</h1>
+    <img src="../src/images/valorant/project-Valorant-1.png" alt="" />
+    <img src="../src/images/valorant/project-Valorant-2.png" alt="" />
+    <img src="../src/images/valorant/project-Valorant-3.png" alt="" />
+    <img src="../src/images/valorant/project-Valorant-4.png" alt="" />
+  </div>
+
+  <div class="details-mobile">
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+  </div>
+
+  <div class="thanks">
+    <p>Thank you for scrolling !</p>
+
+    <p>You can visit this website
+      <a href="https://valorant-agent-showcase.vercel.app/" target="_blank">
+        here
+      </a>
+    </p>
+
+    <p>or see
+      <a href="./hermes" class="next-project">
+        the previous project
+      </a>
+    </p>
+  </div>
+
+  <button class="buttondarkmode" onclick="toggleTheme()"></button>
+
+  <div class="scroll-progress">
+    <div class="scroll-bar"></div>
+  </div>
+
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="../src/gsap-works.js"></script>
+
+  <script src="../src/scroll-bar.js"></script>
+  <script src="../src/toggle-theme.js"></script>
+  <script src="../src/toggle-video.js"></script>
+  <script src="../src/smooth-scroll.js"></script>
+</body>
+
+</html>
