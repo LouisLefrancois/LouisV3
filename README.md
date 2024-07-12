@@ -25,7 +25,7 @@ https://louislefrancois.github.io/Burberry-Monogram-Collection
 https://github.com/LouisLefrancois/Burberry-Monogram-Collection
 
 
-## 2 - Hermes-Monogram-Collection
+## 2 - Hermes-Hiroshi-Sugimoto
 
 Ce projet est une page dédiée à la présentation de la collaboration entre Hermès et Hiroshi Sugimoto. Il a été créé dans le cadre d'un exercice personnel visant à développer davantage mes compétences en HTML & CSS.
 
